@@ -19,90 +19,93 @@ class UpcomingEventCard extends StatelessWidget {
   Widget build(BuildContext context) {
     final mediaQuery = MediaQuery.of(context);
 
-    return Container(
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(13),
-        color: Colors.white,
-      ),
-      margin: EdgeInsets.symmetric(
-        horizontal: mediaQuery.size.width * 0.025,
-      ),
-      padding: EdgeInsets.symmetric(
-        vertical: mediaQuery.size.height * 0.02,
-        horizontal: mediaQuery.size.width * 0.05,
-      ),
-      height: mediaQuery.size.height * 0.2,
-      width: mediaQuery.size.width * 0.7,
-      child: Column(
-        mainAxisAlignment: MainAxisAlignment.spaceAround,
-        children: [
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceAround,
-            children: [
-              CircleAvatar(radius: 25),
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: Text(
-                      "$title",
-                      style: TextStyle(
-                        fontWeight: FontWeight.bold,
-                        fontSize: 17,
+    return Padding(
+      padding: EdgeInsets.symmetric(horizontal: mediaQuery.size.width * 0.03),
+      child: Container(
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(10),
+          color: Colors.white,
+        ),
+        margin: EdgeInsets.symmetric(
+          horizontal: mediaQuery.size.width * 0.02,
+        ),
+        padding: EdgeInsets.symmetric(
+          vertical: mediaQuery.size.height * 0.02,
+          horizontal: mediaQuery.size.width * 0.05,
+        ),
+        height: mediaQuery.size.height * 0.2,
+        width: mediaQuery.size.width * 0.7,
+        child: Column(
+          mainAxisAlignment: MainAxisAlignment.spaceAround,
+          children: [
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround,
+              children: [
+                CircleAvatar(radius: 25),
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(4.0),
+                      child: Text(
+                        "$title",
+                        style: TextStyle(
+                          fontWeight: FontWeight.bold,
+                          fontSize: 17,
+                        ),
                       ),
                     ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: Text(
-                      "$date $time",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                        color: Colors.grey,
+                    Padding(
+                      padding: const EdgeInsets.all(4.0),
+                      child: Text(
+                        "$date $time",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                          color: Colors.grey,
+                        ),
                       ),
                     ),
-                  ),
-                ],
-              ),
-            ],
-          ),
-          Row(
-            mainAxisAlignment: MainAxisAlignment.spaceBetween,
-            children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: Text(
-                      "Technology: $technology",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ),
-                  Padding(
-                    padding: const EdgeInsets.all(4.0),
-                    child: Text(
-                      "Mentor: $mentor",
-                      style: TextStyle(
-                        fontWeight: FontWeight.w500,
-                      ),
-                    ),
-                  ),
-                ],
-              ),
-              CircleAvatar(
-                child: Icon(
-                  Icons.arrow_forward_ios_rounded,
-                  size: 15,
+                  ],
                 ),
-                radius: 15,
-              ),
-            ],
-          ),
-        ],
+              ],
+            ),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
+              children: [
+                Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Padding(
+                      padding: const EdgeInsets.all(4.0),
+                      child: Text(
+                        "Technology: $technology",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding: const EdgeInsets.all(4.0),
+                      child: Text(
+                        "Mentor: $mentor",
+                        style: TextStyle(
+                          fontWeight: FontWeight.w500,
+                        ),
+                      ),
+                    ),
+                  ],
+                ),
+                CircleAvatar(
+                  child: Icon(
+                    Icons.arrow_forward_ios_rounded,
+                    size: 15,
+                  ),
+                  radius: 15,
+                ),
+              ],
+            ),
+          ],
+        ),
       ),
     );
   }
