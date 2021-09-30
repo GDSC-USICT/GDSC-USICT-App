@@ -1,5 +1,3 @@
-import 'dart:math';
-
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:gdsc_usict/Widgets/project_card_widget.dart';
@@ -80,41 +78,44 @@ class HomeScreen extends StatelessWidget {
                     ),
                     TextButton(
                       child: Text("View More"),
-                      onPressed: (){},
+                      onPressed: () {},
                     )
                   ],
                 ),
               ),
-              // GridView.count(
-              //   crossAxisCount: 2,
-              //   shrinkWrap: true,
-              //   physics: NeverScrollableScrollPhysics(),
-              //   children: List.generate(
-              //     4,
-              //     (index) => ProjectCard(),
-              //   ),
-              // ),
-              Container(
-                height: mediaQuery.size.height * 0.33,
-                width: double.infinity,
-                child: Transform.rotate(
-                  angle: -pi / 2,
-                  child: ListWheelScrollView(
-                    diameterRatio: 4,
-                    squeeze: 1.4,
-                    offAxisFraction: -1.3,
-                    physics: FixedExtentScrollPhysics(),
-                    itemExtent: mediaQuery.size.height * 0.3,
-                    children: List.generate(
-                      10,
-                      (index) => Transform.rotate(
-                        angle: pi / 2,
-                        child: ProjectCard(),
-                      ),
-                    ),
-                  ),
+              GridView.count(
+                crossAxisCount: 2,
+                childAspectRatio: 0.8,
+                crossAxisSpacing: mediaQuery.size.width * 0.04,
+                mainAxisSpacing: mediaQuery.size.height * 0.02,
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                children: List.generate(
+                  4,
+                  (index) => ProjectCard(),
                 ),
               ),
+              // Container(
+              //   height: mediaQuery.size.height * 0.33,
+              //   width: double.infinity,
+              //   child: Transform.rotate(
+              //     angle: -pi / 2,
+              //     child: ListWheelScrollView(
+              //       diameterRatio: 4,
+              //       squeeze: 1.4,
+              //       offAxisFraction: -1.3,
+              //       physics: FixedExtentScrollPhysics(),
+              //       itemExtent: mediaQuery.size.height * 0.3,
+              //       children: List.generate(
+              //         10,
+              //         (index) => Transform.rotate(
+              //           angle: pi / 2,
+              //           child: ProjectCard(),
+              //         ),
+              //       ),
+              //     ),
+              //   ),
+              // ),
             ],
           ),
         ),
