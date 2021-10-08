@@ -9,7 +9,7 @@ class Messages extends StatefulWidget {
 class _MessagesState extends State<Messages> {
   @override
   Widget build(BuildContext context) {
-    double h = MediaQuery.of(context).size.height;
+    double h = MediaQuery.of(context).size.height - 50;
     double w = MediaQuery.of(context).size.width;
     return Container(
         decoration: BoxDecoration(
