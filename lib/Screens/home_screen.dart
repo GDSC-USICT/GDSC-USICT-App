@@ -131,7 +131,7 @@ class HomeScreen extends StatelessWidget {
                         radius: 20,
                       ),
                       Expanded(
-                        child: Text("Rahul"),
+                        child: Text("Name"),
                       ),
                     ],
                   ),
