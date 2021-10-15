@@ -16,42 +16,44 @@ class _MessagesState extends State<Messages> {
             color: Colors.white,
             borderRadius: BorderRadius.only(topRight: Radius.circular(28))),
         height: h * (6 / 7),
-        child: Column(
-          children: <Widget>[
-            Container(
-              height: h * (5.4 / 7),
-              child: ListView(
-                reverse: true,
-                children: [
-                  receive("Hey nice to meet you", "karan", "4:27 pm", w),
-                  send("Hello my name is aakash", "aakash", "4:26 pm", w),
-                ],
+        child: SingleChildScrollView(
+          child: Column(
+            children: <Widget>[
+              Container(
+                height: h * (5.4 / 7),
+                child: ListView(
+                  reverse: true,
+                  children: [
+                    receive("Hey nice to meet you", "karan", "4:27 pm", w),
+                    send("Hello my name is aakash", "aakash", "4:26 pm", w),
+                  ],
+                ),
               ),
-            ),
-            Container(
-              decoration: BoxDecoration(
-                  color: Colors.blue[50],
-                  borderRadius:
-                      BorderRadius.vertical(top: Radius.circular(18))),
-              height: h * (0.6 / 7),
-              child: Row(
-                children: <Widget>[
-                  Container(
-                      width: w - 100,
-                      child: Padding(
-                        padding: EdgeInsets.symmetric(horizontal: 10),
-                        child: TextField(
-                          decoration:
-                              InputDecoration(hintText: "Type Message.."),
-                        ),
-                      )),
-                  IconButton(
-                      onPressed: () {}, icon: Icon(Icons.attach_file_sharp)),
-                  IconButton(onPressed: () {}, icon: Icon(Icons.send)),
-                ],
-              ),
-            )
-          ],
+              Container(
+                decoration: BoxDecoration(
+                    color: Colors.blue[50],
+                    borderRadius:
+                        BorderRadius.vertical(top: Radius.circular(18))),
+                height: h * (0.6 / 7),
+                child: Row(
+                  children: <Widget>[
+                    Container(
+                        width: w - 100,
+                        child: Padding(
+                          padding: EdgeInsets.symmetric(horizontal: 10),
+                          child: TextField(
+                            decoration:
+                                InputDecoration(hintText: "Type Message.."),
+                          ),
+                        )),
+                    IconButton(
+                        onPressed: () {}, icon: Icon(Icons.attach_file_sharp)),
+                    IconButton(onPressed: () {}, icon: Icon(Icons.send)),
+                  ],
+                ),
+              )
+            ],
+          ),
         ));
   }
 }

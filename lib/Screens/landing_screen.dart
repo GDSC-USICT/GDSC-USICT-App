@@ -2,6 +2,7 @@ import 'package:animated_bottom_navigation_bar/animated_bottom_navigation_bar.da
 import "package:flutter/material.dart";
 import 'package:gdsc_usict/Screens/add_post_screen.dart';
 import 'package:gdsc_usict/Screens/ideas_screen.dart';
+import 'package:gdsc_usict/Screens/messaging_screen.dart';
 import 'package:gdsc_usict/Screens/profile_screen.dart';
 
 import 'home_screen.dart';
@@ -46,6 +47,7 @@ class _LandingScreenState extends State<LandingScreen> {
           HomeScreen(),
           IdeasScreen(),
           AddPostScreen(),
+          MessagingScreen(),
           ProfileScreen(),
         ],
         controller: _pageController,
@@ -60,6 +62,7 @@ class _LandingScreenState extends State<LandingScreen> {
           Icons.home,
           Icons.notification_important_outlined,
           Icons.add,
+          Icons.message_outlined,
           Icons.account_circle_outlined,
         ],
       ),

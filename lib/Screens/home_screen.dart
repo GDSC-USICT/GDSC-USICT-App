@@ -95,27 +95,48 @@ class HomeScreen extends StatelessWidget {
                   (index) => ProjectCard(),
                 ),
               ),
-              // Container(
-              //   height: mediaQuery.size.height * 0.33,
-              //   width: double.infinity,
-              //   child: Transform.rotate(
-              //     angle: -pi / 2,
-              //     child: ListWheelScrollView(
-              //       diameterRatio: 4,
-              //       squeeze: 1.4,
-              //       offAxisFraction: -1.3,
-              //       physics: FixedExtentScrollPhysics(),
-              //       itemExtent: mediaQuery.size.height * 0.3,
-              //       children: List.generate(
-              //         10,
-              //         (index) => Transform.rotate(
-              //           angle: pi / 2,
-              //           child: ProjectCard(),
-              //         ),
-              //       ),
-              //     ),
-              //   ),
-              // ),
+              Padding(
+                padding: EdgeInsets.symmetric(
+                  vertical: mediaQuery.size.height * 0.02,
+                ),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    Text(
+                      "Explore Team",
+                      style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.w600,
+                      ),
+                    ),
+                    TextButton(
+                      child: Text("View All"),
+                      onPressed: () {},
+                    )
+                  ],
+                ),
+              ),
+              GridView.count(
+                crossAxisCount: 5,
+                childAspectRatio: 0.8,
+                crossAxisSpacing: mediaQuery.size.width * 0.04,
+                mainAxisSpacing: mediaQuery.size.height * 0.02,
+                shrinkWrap: true,
+                physics: NeverScrollableScrollPhysics(),
+                children: List.generate(
+                  10,
+                  (index) => Column(
+                    children: [
+                      CircleAvatar(
+                        radius: 20,
+                      ),
+                      Expanded(
+                        child: Text("Rahul"),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
             ],
           ),
         ),
@@ -123,13 +144,3 @@ class HomeScreen extends StatelessWidget {
     );
   }
 }
-
-// GridView.builder(
-// shrinkWrap: true,
-// scrollDirection: Axis.horizontal,
-// gridDelegate: SliverGridDelegateWithFixedCrossAxisCount(
-// crossAxisCount: 1,
-// ),
-// itemBuilder: (ctx, index) => ProjectCard(),
-// itemCount: 10,
-// ),
